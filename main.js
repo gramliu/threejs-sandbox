@@ -2,6 +2,12 @@ import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
+import davidUrl from "./david.jpg";
+import jeffUrl from "./jeff.png";
+import moonUrl from "./moon.jpg";
+import normalUrl from "./normal.jpg";
+import spaceUrl from "./space.jpg";
+
 // Initialize scene
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -60,11 +66,11 @@ function addStar() {
 Array(200).fill().forEach(addStar);
 
 // Space texture
-const spaceTexture = new THREE.TextureLoader().load("./space.jpg");
+const spaceTexture = new THREE.TextureLoader().load(spaceUrl);
 scene.background = spaceTexture;
 
 // Avatar
-const avatarTexture = new THREE.TextureLoader().load("./david.jpg");
+const avatarTexture = new THREE.TextureLoader().load(davidUrl);
 
 const avatar = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
@@ -73,8 +79,8 @@ const avatar = new THREE.Mesh(
 scene.add(avatar);
 
 // Moon
-const moonTexture = new THREE.TextureLoader().load("./moon.jpg");
-const normalTexture = new THREE.TextureLoader().load("./normal.jpg");
+const moonTexture = new THREE.TextureLoader().load(moonUrl);
+const normalTexture = new THREE.TextureLoader().load(normalUrl);
 
 const moon = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
