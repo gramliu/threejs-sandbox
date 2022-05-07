@@ -64,13 +64,13 @@ const spaceTexture = new THREE.TextureLoader().load("./space.jpg");
 scene.background = spaceTexture;
 
 // Avatar
-const davidTexture = new THREE.TextureLoader().load("./david.jpg");
+const avatarTexture = new THREE.TextureLoader().load("./david.jpg");
 
-const david = new THREE.Mesh(
+const avatar = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
-  new THREE.MeshBasicMaterial({ map: davidTexture })
+  new THREE.MeshBasicMaterial({ map: avatarTexture })
 );
-scene.add(david);
+scene.add(avatar);
 
 // Moon
 const moonTexture = new THREE.TextureLoader().load("./moon.jpg");
@@ -91,8 +91,8 @@ function moveCamera() {
   moon.rotation.y += 0.075;
   moon.rotation.z += 0.05;
 
-  david.rotation.y += 0.01;
-  david.rotation.z += 0.01;
+  avatar.rotation.y += 0.01;
+  avatar.rotation.z += 0.01;
 
   camera.position.z = t * -0.01;
   camera.position.x = t * -0.0002;
