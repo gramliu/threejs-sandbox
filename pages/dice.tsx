@@ -3,6 +3,7 @@ import { ReactElement, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import styles from "../styles/Dice.module.scss";
+import Head from "next/head";
 
 const Dice = (props: { position: [number, number, number] }): ReactElement => {
   const mesh = useRef<any>();
@@ -35,9 +36,13 @@ const Dice = (props: { position: [number, number, number] }): ReactElement => {
 };
 
 const App: NextPage = () => {
-  console.log(styles.canvas);
   return (
     <div className={styles.canvas}>
+      <Head>
+        <title>ThreeJS Sandbox</title>
+        <meta name="description" content="ThreeJS Sandbox" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Canvas>
         <ambientLight intensity={0.5} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
